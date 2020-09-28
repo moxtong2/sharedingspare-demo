@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.my.demo.mapper.OrderItemMapper">
+    <update id="createTable">
+        CREATE TABLE `t_order`  (
+          `order_id` bigint(20) NOT NULL,
+          `user_id` int(6) NOT NULL,
+          `pro_name` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+          `link` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+          PRIMARY KEY (`order_id`) USING BTREE
+        ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic
+    </update>
+
+    <update id="createOrderItemsTable">
+        CREATE TABLE `t_order`  (
+          `order_id` bigint(20) NOT NULL,
+          `user_id` int(6) NOT NULL,
+          `pro_name` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+          `link` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+          PRIMARY KEY (`order_id`) USING BTREE
+        ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic
+    </update>
+
+
+    <insert id="insert"  parameterType="OrderItem">
+        INSERT INTO `t_order_items`(`order_id`, `user_id`, `pro_name`, `link`)
+        VALUES (#{orderId}, #{userId}, #{proName}, #{link});
+    </insert>
+
+
+</mapper>

@@ -1,0 +1,31 @@
+server:
+  port: 8888
+  #链接建立超时时间
+  connection-timeout: 12000
+  tomcat:
+    uri-encoding: UTF-8
+    #最小线程数
+    min-spare-threads: 500
+    #最大线程数
+    max-threads: 2500
+    #最大链接数
+    max-connections: 6500
+    #最大等待队列长度
+    accept-count: 1000
+    #请求头最大长度kb
+    max-http-header-size: 1048576
+    #请请求体最大长度kb
+    #max-http-post-size: 2097152
+  #服务http端口
+
+spring:
+  application:
+    name: sharedingsphare-demo
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.my.demo.entity
+  # 驼峰
+  configuration:
+    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
